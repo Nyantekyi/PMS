@@ -97,7 +97,7 @@
 - Nuxt UI (latest)
 - Vue 3 (3.5.26)
 - TailwindCSS
-- Axios for API calls
+- Nuxt's native $fetch for API calls
 - TypeScript support
 
 ### DevOps

@@ -1,69 +1,85 @@
-import axios from 'axios'
-
 export const useApi = () => {
   const config = useRuntimeConfig()
-  
-  const api = axios.create({
-    baseURL: config.public.apiBase as string,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
+  const baseURL = config.public.apiBase as string
 
   // Projects API
   const getProjects = async () => {
-    const response = await api.get('/projects/')
-    return response.data
+    return await $fetch('/projects/', {
+      baseURL,
+    })
   }
 
   const getProject = async (id: number) => {
-    const response = await api.get(`/projects/${id}/`)
-    return response.data
+    return await $fetch(`/projects/${id}/`, {
+      baseURL,
+    })
   }
 
   const createProject = async (data: any) => {
-    const response = await api.post('/projects/', data)
-    return response.data
+    return await $fetch('/projects/', {
+      baseURL,
+      method: 'POST',
+      body: data,
+    })
   }
 
   const updateProject = async (id: number, data: any) => {
-    const response = await api.put(`/projects/${id}/`, data)
-    return response.data
+    return await $fetch(`/projects/${id}/`, {
+      baseURL,
+      method: 'PUT',
+      body: data,
+    })
   }
 
   const deleteProject = async (id: number) => {
-    await api.delete(`/projects/${id}/`)
+    await $fetch(`/projects/${id}/`, {
+      baseURL,
+      method: 'DELETE',
+    })
   }
 
   // Tasks API
   const getTasks = async (filters?: any) => {
-    const response = await api.get('/tasks/', { params: filters })
-    return response.data
+    return await $fetch('/tasks/', {
+      baseURL,
+      query: filters,
+    })
   }
 
   const getTask = async (id: number) => {
-    const response = await api.get(`/tasks/${id}/`)
-    return response.data
+    return await $fetch(`/tasks/${id}/`, {
+      baseURL,
+    })
   }
 
   const createTask = async (data: any) => {
-    const response = await api.post('/tasks/', data)
-    return response.data
+    return await $fetch('/tasks/', {
+      baseURL,
+      method: 'POST',
+      body: data,
+    })
   }
 
   const updateTask = async (id: number, data: any) => {
-    const response = await api.put(`/tasks/${id}/`, data)
-    return response.data
+    return await $fetch(`/tasks/${id}/`, {
+      baseURL,
+      method: 'PUT',
+      body: data,
+    })
   }
 
   const deleteTask = async (id: number) => {
-    await api.delete(`/tasks/${id}/`)
+    await $fetch(`/tasks/${id}/`, {
+      baseURL,
+      method: 'DELETE',
+    })
   }
 
   // Users API
   const getUsers = async () => {
-    const response = await api.get('/users/')
-    return response.data
+    return await $fetch('/users/', {
+      baseURL,
+    })
   }
 
   return {

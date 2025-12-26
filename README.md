@@ -23,7 +23,7 @@ A full-stack Project Management System built with Django REST Framework (backend
 - **Nuxt 3** - Vue.js framework
 - **Nuxt-UI** - Beautiful UI component library
 - **TailwindCSS** - Utility-first CSS framework
-- **Axios** - HTTP client for API calls
+- **$fetch** - Nuxt's native HTTP client for API calls
 
 ## Project Structure
 
