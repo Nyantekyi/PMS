@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-export const useApi = () => {
+export default function() {
   const config = useRuntimeConfig()
   
   const api = axios.create({
-    baseURL: config.public.apiBase,
+    baseURL: config.public.apiBase as string,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -80,3 +80,4 @@ export const useApi = () => {
     getUsers,
   }
 }
+

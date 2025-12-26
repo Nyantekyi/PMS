@@ -9,7 +9,6 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@nuxt/content": "^3.9.0",
     "@nuxt/ui": "^4.3.0",
     "axios": "^1.13.2",
     "nuxt": "^4.2.2"
