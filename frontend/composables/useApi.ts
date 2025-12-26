@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default function() {
+export const useApi = () => {
   const config = useRuntimeConfig()
   
   const api = axios.create({
@@ -80,4 +80,5 @@ export default function() {
     getUsers,
   }
 }
+
 
